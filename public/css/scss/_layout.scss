@@ -1,0 +1,1017 @@
+body, html 
+{
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+
+// custom cursor 
+
+.cursor 
+{
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 3px solid $primary-clr;
+    transition: transform 750ms ease;
+    transform: translate(-50%, -50%) scale(.3);
+    z-index: 9999999999;
+}
+
+.custom-cursor--link 
+{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+// preloader
+
+.preloader 
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: $primary-clr;
+    z-index: 9999999;
+    transition: all 0.2s ease-in-out;
+    &__content 
+    {
+        width: 100%;
+        height: 100%;
+        @include flexbox(center, center);
+        transition: all 0.2s ease-in-out;
+        &__circle-anime 
+        {
+            width: 100px;
+            height: 100px;
+            transform: scale(.5);
+            border-radius: 50%;
+            background-color: $primary-clr-2;
+            transition: all 0.2s ease-in-out;
+        }
+    }
+}
+
+
+// Header 
+
+
+.header 
+{
+
+    width: 100%;
+    height: 65vh;
+    &__content 
+    {
+
+        @include flexbox(space-between, center);
+        padding: $padding-side-mobile;
+        height: 65px;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+
+
+
+        &__home-link 
+        {
+            @include resetLinks;
+            color: $primary-clr-2;
+            transition: all 0.2s ease-in-out;
+            &:hover 
+            {
+                color: $primary-clr;
+                transition: all 0.2s ease-in-out;
+            }
+        }
+
+        &__mobile-nav
+        {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;     
+            background-color: $primary-clr-2;
+            @include flexbox(center, center);
+            flex-direction: column;
+            opacity: 0;
+            visibility: hidden;
+
+            .menu 
+            {
+                &__list-item 
+                {
+                    list-style: none;
+                    padding: 15px 0;
+                    text-align: center;
+                    opacity: 0;
+                    margin-left: -2rem;
+
+                    &__link 
+                    {
+                        @include resetLinks;
+                        color: #fff;
+                        font-weight: normal;
+                    }
+                }
+            }
+
+            &__social-links 
+            {
+                @include flexbox(center, center); 
+                margin-top: 2.5rem;
+                .anime-social
+                {
+                    margin: 0 8px;
+                    opacity: 0;
+                    margin-left: -2rem;
+                    background: #fff;
+                    padding: 7px;
+                    border-radius: 50%;
+                    img 
+                    {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+        }
+
+        &__desktop-nav 
+        {
+            display: none;
+        }
+
+        &__toggle-mobile 
+        {
+            width: 50px;
+            height: 50px;
+            background: transparent;
+            border: 1px solid $primary-clr-2;
+            border-radius: 50%;
+            cursor: pointer;
+            position: relative ;
+            border-radius: 50%;
+            z-index: 100;
+            position: fixed;
+            box-shadow: 0 0  1px rgba(0,0,0,0.1);
+            right: 3%;
+            .line 
+            {
+                width: 35%;
+                height: 2px;
+                background: $primary-clr-2;
+                position: absolute;
+                transform: translate(-50%, -50%);
+                top: 50%;
+                left: 50%;
+            }
+
+            .line-top 
+            {
+                top: 45%;
+            }
+
+
+            .line-bottom 
+            {
+                top: 60%;
+            }
+
+        }
+        }
+
+        &__showcase 
+        {
+            width: 100%;
+            height: 100%;
+            @include flexbox(center, center);
+            flex-direction: column;
+            padding: $padding-side-mobile;
+
+            h2 
+            {
+                .name 
+                {
+                    display: block;
+                    font-size: 24px;
+                    font-weight: normal;
+                }
+
+                .title 
+                {
+                    font-size: 12vw;
+                    line-height: 3.5rem;
+                    display: block;
+                    font-weight: normal;
+                }
+            }
+
+            &__social-links 
+            {
+                margin-top: 2rem;
+                a 
+                {
+
+                    display: inline-block;
+                    margin: 0 10px;
+                    padding: 18px;
+                    img 
+                    {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+
+                .gmail 
+                {
+                    background-color: #FEECEA;
+                    border-radius: 50%;
+                }
+
+                .github 
+                {
+                    background: #f8f8f8;
+                    border-radius: 50%;
+                }
+
+                .linkedin 
+                {
+                    background: rgb(238, 247, 255);
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+
+    // proiects 
+
+main 
+{
+
+    .about-me 
+    {
+        margin-bottom: 3rem;
+        &__heading 
+        {
+            font-size: 36px;
+            font-weight: normal;
+        }
+
+        &__content 
+        {
+            margin-top: 2rem;
+
+            a 
+            {
+                @include resetLinks;
+                font-size: 1.5rem;
+                color: $primary-clr;
+            }
+            p 
+            {
+                font-weight: lighter;
+                font-size: 1.5rem;
+                margin-top: 1rem;
+            }
+        }
+    }
+    .projects 
+    {
+        background-color: $primary-clr-3;
+        padding: 4rem 0rem;
+        &__heading 
+        {
+            font-size: 36px;
+            font-weight: normal;
+        }
+        &__container 
+        {
+         
+            &__project 
+            {
+                
+                background: #fff;
+                .showcase 
+                {
+                    img 
+                    {
+                        width: 100%;
+                        height: auto
+                    }
+                }
+
+                .description 
+                {
+                    padding: 15px 10px;
+
+                    a 
+                    {
+                        @include resetLinks;
+                        color: $primary-clr-2;
+                        display: block;
+                        margin-bottom: .5rem;
+                        @include flexbox(space-between, center);
+                        font-weight: bold;
+                        font-size: 1.3rem;
+                        position: relative;
+                        z-index: 2;
+                        i 
+                        {
+                            font-size: 1rem;
+                            transition: all 0.2s ease-in-out;
+                        }
+                        &:hover i 
+                        {
+                            transform: rotate(-45deg);
+                            color: $primary-clr;
+                            transition: all 0.2s ease-in-out;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer 
+{
+    background: $primary-clr-2;
+    padding: 3rem 1rem;
+    margin-top: 3rem;
+    &__content 
+    {
+        span 
+        {
+            font-weight: normal;
+            font-size: 1.1rem;
+            color: #fff;
+            i 
+            {
+                color: crimson;
+            }
+        }
+
+        .tech 
+        {
+            @include flexbox(start, start);
+            margin-top: 0.5rem;
+            img 
+            {
+                width: 35px;
+                margin: 0 6px;
+                height: auto;
+            }
+        }
+
+        .contact 
+        {
+            margin-top: 1rem;
+            a 
+            {
+                @include resetLinks;
+                color: #fff;
+                display: block;
+                margin-top: 0.5rem;
+            }
+        }
+    }
+}
+
+
+
+// Breakpoints 
+
+@media screen and (min-width: 600px) {
+    .header 
+    {
+        &__content 
+        {
+            padding: $padding-side-tablet;
+
+            &__toggle-mobile  
+            {
+                margin-right: 3rem;
+            }
+        }
+
+        &__showcase 
+        {
+            padding: $padding-side-tablet;
+
+            h2 
+            {
+                text-align: left;
+
+                .name 
+                {
+                    font-size: 2rem;
+                }
+                .title  
+                {
+                 
+                    font-size: 3.5rem;
+                    text-align: left;
+                    padding: 0;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    main 
+    {
+        .about-me 
+        {
+            &__heading 
+            {
+                font-size: 3rem;
+                font-weight: normal;
+            }
+    
+            &__content 
+            {
+                margin-top: 2rem;
+    
+                a 
+                {
+                    @include resetLinks;
+                    font-size: 1.5rem;
+                    color: $primary-clr;
+                }
+                p 
+                {
+                    font-weight: lighter;
+                    font-size: 1.5rem;
+                    margin-top: 1rem;
+                }
+            }
+        }
+        .projects 
+        {
+            padding: 4rem 3rem;
+
+            &__heading 
+            {
+                font-size: 3rem;
+            }
+
+            &__container
+            {
+                &__project  
+                {
+                    @include flexbox(space-between, center);
+                    width: 100%;
+                    height: auto;
+                    
+                    .showcase 
+                    {
+                        width: 50%;
+                        order: 2;
+                        img 
+                        {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .description 
+                    {
+                        width: 50%;
+                        padding: 40px 20px;
+
+                        a 
+                        {
+                            font-size: 2rem;
+                            font-weight: normal;
+
+                            i 
+                            {
+                                font-size: 1.3rem;
+                            }
+                        }
+
+                        span 
+                        {
+                            font-size: 1.2rem;
+                            font-weight: lighter;
+                        }
+                        
+                    }
+                }
+            }
+        }
+
+        .contact-me 
+        {
+            &__content 
+            {
+                h2 
+                {
+                    font-size: 3rem;
+                }
+            }
+        }
+    }
+
+    .footer 
+    {
+        background: $primary-clr-2;
+        padding: 3rem 3rem;
+        &__content 
+        {
+            span 
+            {
+                font-weight: normal;
+                font-size: 1.1rem;
+                color: #fff;
+                i 
+                {
+                    color: crimson;
+                }
+            }
+
+            .tech 
+            {
+                @include flexbox(start, start);
+                margin-top: 0.5rem;
+                img 
+                {
+                    width: 35px;
+                    margin: 0 6px;
+                    height: auto;
+                }
+            }
+        }
+    }
+    
+}
+
+
+
+
+@media screen and (min-width: 800px) {
+    .header 
+    {
+        height: 90vh;
+        @include flexbox(center, center);
+        &__content 
+        {   
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: $padding-side-tablet;
+            width: 100%;
+            @include flexbox(space-between, center);
+            z-index: 5;
+
+            &__home-link 
+            {
+                font-size: 1.1rem;
+            }
+
+            &__toggle-mobile  
+            {
+                margin-right: 3rem;
+                display: none;
+            }
+            &__mobile-nav 
+            {
+                display: none;
+            } 
+            &__desktop-nav 
+            {
+                display: block;
+                
+                .menu 
+                {
+                    &__list-item 
+                    {
+                        display: inline-block;
+                        padding: 0 15px;
+
+                        &__link 
+                        {
+                            @include resetLinks;
+                            color: $primary-clr-2;
+                            font-weight: normal;
+                            font-size: 1.1rem;
+                            &:hover 
+                            {
+                                color: $primary-clr;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
+        &__showcase 
+        {
+            padding: $padding-side-tablet;
+            position: relative;
+
+            h2 
+            {
+                text-align: left;
+
+                .name 
+                {
+                    font-weight: lighter;
+                }
+                .title  
+                {
+                 
+                    font-size: 6rem;
+                    line-height: 6.5rem;
+                    font-weight: normal;
+                    padding: 0;
+                    margin: 0;
+                    display: inline-block;
+                }
+            }
+
+
+            &__social-links 
+            {
+                .gmail
+                {
+                    position: absolute;
+                    top: 70%;
+                    left: 10%;
+                }
+
+                .github
+                {
+                    position: absolute;
+                    right: 10%;
+                    top: 20%;
+                }
+
+                .linkedin
+                {
+                    position: absolute;
+                    right: 10%;
+                    top: 70%;
+                }
+
+                .github, .linkedin, .gmail 
+                {
+                    transform: scale(1.3);
+                    animation: scale 2.5s ease-in-out infinite; 
+
+                    @keyframes scale  
+                    {
+                        0% 
+                        {
+                        
+                            margin-top: -1rem;
+                        }
+
+                        50% 
+                        {
+                          
+                            margin-top: 0rem;
+                        }
+
+                        100% 
+                        {
+                      
+                            margin-top: -1rem;
+                        }
+                    }
+                }
+            } 
+        }
+    }
+
+    main 
+    {
+        .about-me 
+        {
+            margin-bottom: 3rem;
+            &__heading 
+            {
+                font-size: 36px;
+                font-weight: normal;
+            }
+    
+            &__content 
+            {
+                margin-top: 2rem;
+    
+                a 
+                {
+                    @include resetLinks;
+                    font-size: 1.5rem;
+                    color: $primary-clr;
+                }
+                p 
+                {
+                    font-weight: lighter;
+                    font-size: 1.5rem;
+                    margin-top: 1rem;
+                }
+            }
+        }
+
+        .projects 
+        {
+            
+            width: 100%;
+            height: auto;
+            padding-bottom: 0;
+
+            &__heading 
+            {
+                font-size: 3rem;
+            }
+
+            &__container
+            {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas: 'p1 p2' 'p3 p4';
+                gap: 50px;
+                width: 100%;
+                margin-top: 4rem;
+
+                .p1 
+                {
+                    grid-area: p1;
+                }
+
+                .p2
+                {
+                    grid-area: p2;
+
+                    .showcase
+                    {
+                        @include flexbox(start, center);
+                        flex-wrap: wrap;
+                    }
+                }
+
+                .p3
+                {
+                    grid-area: p3;
+                }
+
+                .p4
+                {
+                    grid-area: p4;
+                }
+                &__project  
+                {
+                   flex-wrap: wrap;
+                    width: 100%;
+                    height: auto;
+                    .showcase 
+                    {
+                        width: 100%;
+                        order: 2;
+                        overflow: hidden;
+                        img 
+                        {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .description 
+                    {
+                        width: 100%;
+                        padding: 40px 20px;
+                        order: 2;
+
+                        a 
+                        {
+                            font-size: 2rem;
+                            font-weight: normal;
+
+                            i 
+                            {
+                                font-size: 1.3rem;
+                            }
+                        }
+
+                        span 
+                        {
+                            font-size: 1.2rem;
+                            font-weight: lighter;
+                        }
+                        
+                    }
+                }
+            }
+        }
+
+        .contact-me 
+        {
+            &__content 
+            {
+                h2 
+                {
+                    font-size: 3rem;
+                }
+            }
+        }
+    }
+
+    .footer 
+    {
+        background: $primary-clr-2;
+        padding: 3rem 6rem;
+        &__content 
+        {
+            @include flexbox(space-between, center);
+            span 
+            {
+                font-weight: normal;
+                font-size: 1.1rem;
+                color: #fff;
+                i 
+                {
+                    color: crimson;
+                }
+            }
+
+            .tech 
+            {
+                @include flexbox(start, start);
+                margin-top: 0.5rem;
+                img 
+                {
+                    width: 35px;
+                    margin: 0 6px;
+                    height: auto;
+                }
+            }
+        }
+    }
+
+}
+
+
+@media screen and(min-width: 1300px) {
+    .header 
+    {
+        width: 100%;
+        height: 100vh;
+        padding: 0;
+
+        &__content 
+        {
+            @include flexbox(space-between, center);
+            padding: $padding-side-desktop;
+
+            &__home-link 
+            {
+                margin: 0;
+                padding: 0;
+            }            
+        }
+
+        &__showcase 
+        {
+            max-width: 1400px;
+            margin: 0 auto;
+            h2 
+            {
+               text-align: left;
+
+               .name 
+               {
+                   font-weight: lighter;
+                   font-size: 2.5rem;
+               }
+
+               .title 
+               {
+                   font-weight: bold;
+                   font-size: 6rem;
+                   margin-top: 0rem;
+               }
+            }
+        }
+    }
+    main
+    {
+        .about-me 
+        {
+            margin-bottom: 3rem;
+            &__heading 
+            {
+                font-size: 3rem;
+                font-weight: normal;
+            }
+    
+            &__content 
+            {
+                margin-top: 2rem;
+    
+                a 
+                {
+                    @include resetLinks;
+                    font-size: 1.5rem;
+                    color: $primary-clr;
+                }
+                p 
+                {
+                    font-weight: lighter;
+                    font-size: 1.5rem;
+                    margin-top: 1rem;
+                }
+            }
+        }
+        .projects 
+        {
+            background: $primary-clr-3;
+            width: 100%;
+            &__heading 
+            {
+                max-width: 1400px;
+                margin: 0 auto;
+                margin-bottom: 3rem;
+            }
+
+            &__container 
+            {
+                max-width: 1400px;
+                margin: 0 auto;
+                background: $primary-clr-3;
+            }
+        }
+    }
+
+    .about-me
+    {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .contact-me 
+    {
+        &__content 
+        {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+    }
+
+    .footer 
+    {
+        background: $primary-clr-2;
+        padding: 3rem 6rem;
+        &__content 
+        {
+            max-width: 1300px;
+            margin: 0 auto;
+            span 
+            {
+                font-weight: normal;
+                font-size: 1.1rem;
+                color: #fff;
+                i 
+                {
+                    color: crimson;
+                }
+            }
+
+            .tech 
+            {
+                @include flexbox(start, start);
+                margin-top: 0.5rem;
+                img 
+                {
+                    width: 35px;
+                    margin: 0 6px;
+                    height: auto;
+                }
+            }
+
+            .contact 
+            {
+
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .header 
+    {
+        &__content 
+        {
+            padding: $padding-side-desktop-l;
+        }
+    }
+}

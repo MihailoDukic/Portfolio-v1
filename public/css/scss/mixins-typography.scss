@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+// primary variables 
+
+$primary-clr: #fba754;
+$primary-clr-2: #121212;
+$primary-clr-3: #f9f9f9;
+
+// Variables
+  
+$padding-side-mobile: 0 1rem;
+$padding-side-tablet: 0 3rem;
+$padding-side-desktop: 0 6rem;
+$padding-side-desktop-l: 0 16rem;
+$padding-vertical-spacing: 4rem 0;
+
+@mixin flexbox($justify, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin resetLinks() {
+    text-decoration: none;
+    font-size: 18px;
+    line-height: normal;
+    font-weight: 400;
+}
+

@@ -1,0 +1,293 @@
+.projects 
+{
+    height: auto;
+}
+
+main  
+{
+    margin-top: 8rem;
+    padding: $padding-side-mobile;
+
+    .project-details 
+    {
+        &__title 
+        {
+            span 
+            {
+                font-size: 1.5rem;
+                font-weight: lighter;
+            }
+
+            h2 
+            {
+                font-size: 2rem;
+                line-height: 2rem;
+                margin-top: .5rem;
+            }
+
+            .links 
+            {
+                
+                a 
+                {
+                    width: 60px;
+                    height: 60px;
+                    @include resetLinks;
+                    color: #fff;
+                    display: inline-block;
+                    margin-right: 5px;
+                    border-radius: 50%;
+                   
+
+                    i 
+                    {   
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                        background: #471EC2;
+                        @include flexbox(center, center);
+                        &:hover 
+                        {
+                            background: $primary-clr;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__showcase 
+        {
+            margin-top: 2rem;
+            img 
+            {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    .project-description 
+    {
+        margin-top: 5rem;
+        &__content 
+        {
+            .title 
+            {
+                h2 
+                {
+                    font-size: 2rem;
+                    line-height: 2rem;
+                    margin-bottom: 2rem;
+                }
+            }
+
+            .description 
+            {
+                p 
+                {
+                    font-size: 1.5rem;
+                    font-weight: lighter;
+                    margin-bottom: 1rem;
+                    text-align: left;
+
+                    a 
+                    {
+                        color: $primary-clr;
+                    }
+                }
+
+                .tech  
+                {
+                    .heading 
+                    {
+                        list-style: none;
+                        font-size: 1.5rem;
+                        margin-bottom: 1rem;
+                        font-weight: bold;
+                    }
+
+                    li 
+                    {
+                        list-style: none;
+                        font-size: 1.5rem;
+                        font-weight: lighter;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Breakpoints 
+
+@media screen and (min-width: 600px) {
+    main  
+    {
+        margin-top: 8rem;
+        padding: $padding-side-tablet;
+    
+        .project-details 
+        {
+            &__title 
+            {
+                span 
+                {
+                    font-size: 2rem;
+                    font-weight: lighter;
+                }
+    
+                h2 
+                {
+                    font-size: 2.5rem;
+                    line-height: 2rem;
+                    margin-top: .5rem;
+                }
+                
+            }
+    
+            &__showcase 
+            {
+                margin-top: 2rem;
+                img 
+                {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 800px) {
+    main  
+    {
+        margin-top: 8rem;
+        padding: $padding-side-tablet;
+    
+        .project-details 
+        {
+            @include flexbox(space-between, center);
+            &__title 
+            {
+                span 
+                {
+                    font-size: 2rem;
+                    font-weight: lighter;
+                }
+    
+                h2 
+                {
+                    font-size: 2.5rem;
+                    line-height: 2rem;
+                    margin: .5rem 0;
+                }
+
+            }
+    
+            &__showcase 
+            {
+                margin-top: 2rem;
+                img 
+                {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+
+        .project-description 
+        {
+            margin-top: 10rem;
+            &__content 
+            {
+                @include flexbox(space-between, start);
+                .title 
+                {
+                    width: 20%;
+                    h2 
+                    {
+                        font-size: 2.5rem;
+                        line-height: 2.5rem;
+                        margin-bottom: 2rem;
+                    }
+                }
+    
+                .description 
+                {
+                    width: 60%;
+                    p 
+                    {
+                        font-size: 1.5rem;
+                        font-weight: lighter;
+                        margin-bottom: 1rem;
+                        text-align: left;
+    
+                        a 
+                        {
+                            color: $primary-clr;
+                        }
+                    }
+    
+                    .tech  
+                    {
+                        .heading 
+                        {
+                            list-style: none;
+                            font-size: 2.5rem;
+                            margin-bottom: 1rem;
+                            font-weight: bold;
+                        }
+    
+                        li 
+                        {
+                            list-style: none;
+                            font-size: 1.5rem;
+                            font-weight: lighter;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 1300px) {
+    main  
+    {
+        margin-top: 8rem;
+        padding: $padding-side-tablet;
+        max-width: 1400px;
+        margin: 8rem auto;
+    
+        .project-details 
+        {
+            @include flexbox(space-between, center);
+            &__title 
+            {
+                span 
+                {
+                    font-size: 3rem;
+                    font-weight: lighter;
+                }
+    
+                h2 
+                {
+                    font-size: 4rem;
+                    line-height: 2rem;
+                    margin-top: .5rem;
+                }
+            }
+    
+            &__showcase 
+            {
+                margin-top: 2rem;
+                img 
+                {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}

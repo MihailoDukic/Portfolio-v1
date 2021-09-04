@@ -1,0 +1,1004 @@
+/* Box sizing rules */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.1s ease-in-out;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+body, html {
+  background: #fff;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body, html {
+  font-family: "Roboto", sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+.cursor {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 3px solid #fba754;
+  transition: transform 750ms ease;
+  transform: translate(-50%, -50%) scale(0.3);
+  z-index: 9999999999;
+}
+
+.custom-cursor--link {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #fba754;
+  z-index: 9999999;
+  transition: all 0.2s ease-in-out;
+}
+.preloader__content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+.preloader__content__circle-anime {
+  width: 100px;
+  height: 100px;
+  transform: scale(0.5);
+  border-radius: 50%;
+  background-color: #121212;
+  transition: all 0.2s ease-in-out;
+}
+
+.header {
+  width: 100%;
+  height: 65vh;
+}
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  height: 65px;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+.header__content__home-link {
+  text-decoration: none;
+  font-size: 18px;
+  line-height: normal;
+  font-weight: 400;
+  color: #121212;
+  transition: all 0.2s ease-in-out;
+}
+.header__content__home-link:hover {
+  color: #fba754;
+  transition: all 0.2s ease-in-out;
+}
+.header__content__mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+}
+.header__content__mobile-nav .menu__list-item {
+  list-style: none;
+  padding: 15px 0;
+  text-align: center;
+  opacity: 0;
+  margin-left: -2rem;
+}
+.header__content__mobile-nav .menu__list-item__link {
+  text-decoration: none;
+  font-size: 18px;
+  line-height: normal;
+  font-weight: 400;
+  color: #fff;
+  font-weight: normal;
+}
+.header__content__mobile-nav__social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+.header__content__mobile-nav__social-links .anime-social {
+  margin: 0 8px;
+  opacity: 0;
+  margin-left: -2rem;
+  background: #fff;
+  padding: 7px;
+  border-radius: 50%;
+}
+.header__content__mobile-nav__social-links .anime-social img {
+  width: 30px;
+  height: 30px;
+}
+.header__content__desktop-nav {
+  display: none;
+}
+.header__content__toggle-mobile {
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border: 1px solid #121212;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  border-radius: 50%;
+  z-index: 100;
+  position: fixed;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  right: 3%;
+}
+.header__content__toggle-mobile .line {
+  width: 35%;
+  height: 2px;
+  background: #121212;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+.header__content__toggle-mobile .line-top {
+  top: 45%;
+}
+.header__content__toggle-mobile .line-bottom {
+  top: 60%;
+}
+.header__showcase {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 1rem;
+}
+.header__showcase h2 .name {
+  display: block;
+  font-size: 24px;
+  font-weight: normal;
+}
+.header__showcase h2 .title {
+  font-size: 12vw;
+  line-height: 3.5rem;
+  display: block;
+  font-weight: normal;
+}
+.header__showcase__social-links {
+  margin-top: 2rem;
+}
+.header__showcase__social-links a {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 18px;
+}
+.header__showcase__social-links a img {
+  width: 30px;
+  height: 30px;
+}
+.header__showcase__social-links .gmail {
+  background-color: #FEECEA;
+  border-radius: 50%;
+}
+.header__showcase__social-links .github {
+  background: #f8f8f8;
+  border-radius: 50%;
+}
+.header__showcase__social-links .linkedin {
+  background: #eef7ff;
+  border-radius: 50%;
+}
+
+main .about-me {
+  margin-bottom: 3rem;
+}
+main .about-me__heading {
+  font-size: 36px;
+  font-weight: normal;
+}
+main .about-me__content {
+  margin-top: 2rem;
+}
+main .about-me__content a {
+  text-decoration: none;
+  font-size: 18px;
+  line-height: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: #fba754;
+}
+main .about-me__content p {
+  font-weight: lighter;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+main .projects {
+  background-color: #f9f9f9;
+  padding: 4rem 0rem;
+}
+main .projects__heading {
+  font-size: 36px;
+  font-weight: normal;
+}
+main .projects__container__project {
+  background: #fff;
+}
+main .projects__container__project .showcase img {
+  width: 100%;
+  height: auto;
+}
+main .projects__container__project .description {
+  padding: 15px 10px;
+}
+main .projects__container__project .description a {
+  text-decoration: none;
+  font-size: 18px;
+  line-height: normal;
+  font-weight: 400;
+  color: #121212;
+  display: block;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+  position: relative;
+  z-index: 2;
+}
+main .projects__container__project .description a i {
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+main .projects__container__project .description a:hover i {
+  transform: rotate(-45deg);
+  color: #fba754;
+  transition: all 0.2s ease-in-out;
+}
+
+.footer {
+  background: #121212;
+  padding: 3rem 1rem;
+  margin-top: 3rem;
+}
+.footer__content span {
+  font-weight: normal;
+  font-size: 1.1rem;
+  color: #fff;
+}
+.footer__content span i {
+  color: crimson;
+}
+.footer__content .tech {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  margin-top: 0.5rem;
+}
+.footer__content .tech img {
+  width: 35px;
+  margin: 0 6px;
+  height: auto;
+}
+.footer__content .contact {
+  margin-top: 1rem;
+}
+.footer__content .contact a {
+  text-decoration: none;
+  font-size: 18px;
+  line-height: normal;
+  font-weight: 400;
+  color: #fff;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+@media screen and (min-width: 600px) {
+  .header__content {
+    padding: 0 3rem;
+  }
+  .header__content__toggle-mobile {
+    margin-right: 3rem;
+  }
+  .header__showcase {
+    padding: 0 3rem;
+  }
+  .header__showcase h2 {
+    text-align: left;
+  }
+  .header__showcase h2 .name {
+    font-size: 2rem;
+  }
+  .header__showcase h2 .title {
+    font-size: 3.5rem;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+  }
+
+  main .about-me__heading {
+    font-size: 3rem;
+    font-weight: normal;
+  }
+  main .about-me__content {
+    margin-top: 2rem;
+  }
+  main .about-me__content a {
+    text-decoration: none;
+    font-size: 18px;
+    line-height: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #fba754;
+  }
+  main .about-me__content p {
+    font-weight: lighter;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+  main .projects {
+    padding: 4rem 3rem;
+  }
+  main .projects__heading {
+    font-size: 3rem;
+  }
+  main .projects__container__project {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+  }
+  main .projects__container__project .showcase {
+    width: 50%;
+    order: 2;
+  }
+  main .projects__container__project .showcase img {
+    width: 100%;
+    height: 100%;
+  }
+  main .projects__container__project .description {
+    width: 50%;
+    padding: 40px 20px;
+  }
+  main .projects__container__project .description a {
+    font-size: 2rem;
+    font-weight: normal;
+  }
+  main .projects__container__project .description a i {
+    font-size: 1.3rem;
+  }
+  main .projects__container__project .description span {
+    font-size: 1.2rem;
+    font-weight: lighter;
+  }
+  main .contact-me__content h2 {
+    font-size: 3rem;
+  }
+
+  .footer {
+    background: #121212;
+    padding: 3rem 3rem;
+  }
+  .footer__content span {
+    font-weight: normal;
+    font-size: 1.1rem;
+    color: #fff;
+  }
+  .footer__content span i {
+    color: crimson;
+  }
+  .footer__content .tech {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    margin-top: 0.5rem;
+  }
+  .footer__content .tech img {
+    width: 35px;
+    margin: 0 6px;
+    height: auto;
+  }
+}
+@media screen and (min-width: 800px) {
+  .header {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header__content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 3rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+  }
+  .header__content__home-link {
+    font-size: 1.1rem;
+  }
+  .header__content__toggle-mobile {
+    margin-right: 3rem;
+    display: none;
+  }
+  .header__content__mobile-nav {
+    display: none;
+  }
+  .header__content__desktop-nav {
+    display: block;
+  }
+  .header__content__desktop-nav .menu__list-item {
+    display: inline-block;
+    padding: 0 15px;
+  }
+  .header__content__desktop-nav .menu__list-item__link {
+    text-decoration: none;
+    font-size: 18px;
+    line-height: normal;
+    font-weight: 400;
+    color: #121212;
+    font-weight: normal;
+    font-size: 1.1rem;
+  }
+  .header__content__desktop-nav .menu__list-item__link:hover {
+    color: #fba754;
+  }
+  .header__showcase {
+    padding: 0 3rem;
+    position: relative;
+  }
+  .header__showcase h2 {
+    text-align: left;
+  }
+  .header__showcase h2 .name {
+    font-weight: lighter;
+  }
+  .header__showcase h2 .title {
+    font-size: 6rem;
+    line-height: 6.5rem;
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+  }
+  .header__showcase__social-links .gmail {
+    position: absolute;
+    top: 70%;
+    left: 10%;
+  }
+  .header__showcase__social-links .github {
+    position: absolute;
+    right: 10%;
+    top: 20%;
+  }
+  .header__showcase__social-links .linkedin {
+    position: absolute;
+    right: 10%;
+    top: 70%;
+  }
+  .header__showcase__social-links .github, .header__showcase__social-links .linkedin, .header__showcase__social-links .gmail {
+    transform: scale(1.3);
+    animation: scale 2.5s ease-in-out infinite;
+  }
+  @keyframes scale {
+    0% {
+      margin-top: -1rem;
+    }
+    50% {
+      margin-top: 0rem;
+    }
+    100% {
+      margin-top: -1rem;
+    }
+  }
+
+  main .about-me {
+    margin-bottom: 3rem;
+  }
+  main .about-me__heading {
+    font-size: 36px;
+    font-weight: normal;
+  }
+  main .about-me__content {
+    margin-top: 2rem;
+  }
+  main .about-me__content a {
+    text-decoration: none;
+    font-size: 18px;
+    line-height: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #fba754;
+  }
+  main .about-me__content p {
+    font-weight: lighter;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+  main .projects {
+    width: 100%;
+    height: auto;
+    padding-bottom: 0;
+  }
+  main .projects__heading {
+    font-size: 3rem;
+  }
+  main .projects__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "p1 p2" "p3 p4";
+    gap: 50px;
+    width: 100%;
+    margin-top: 4rem;
+  }
+  main .projects__container .p1 {
+    grid-area: p1;
+  }
+  main .projects__container .p2 {
+    grid-area: p2;
+  }
+  main .projects__container .p2 .showcase {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  main .projects__container .p3 {
+    grid-area: p3;
+  }
+  main .projects__container .p4 {
+    grid-area: p4;
+  }
+  main .projects__container__project {
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+  }
+  main .projects__container__project .showcase {
+    width: 100%;
+    order: 2;
+    overflow: hidden;
+  }
+  main .projects__container__project .showcase img {
+    width: 100%;
+    height: 100%;
+  }
+  main .projects__container__project .description {
+    width: 100%;
+    padding: 40px 20px;
+    order: 2;
+  }
+  main .projects__container__project .description a {
+    font-size: 2rem;
+    font-weight: normal;
+  }
+  main .projects__container__project .description a i {
+    font-size: 1.3rem;
+  }
+  main .projects__container__project .description span {
+    font-size: 1.2rem;
+    font-weight: lighter;
+  }
+  main .contact-me__content h2 {
+    font-size: 3rem;
+  }
+
+  .footer {
+    background: #121212;
+    padding: 3rem 6rem;
+  }
+  .footer__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer__content span {
+    font-weight: normal;
+    font-size: 1.1rem;
+    color: #fff;
+  }
+  .footer__content span i {
+    color: crimson;
+  }
+  .footer__content .tech {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    margin-top: 0.5rem;
+  }
+  .footer__content .tech img {
+    width: 35px;
+    margin: 0 6px;
+    height: auto;
+  }
+}
+@media screen and (min-width: 1300px) {
+  .header {
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+  }
+  .header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6rem;
+  }
+  .header__content__home-link {
+    margin: 0;
+    padding: 0;
+  }
+  .header__showcase {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .header__showcase h2 {
+    text-align: left;
+  }
+  .header__showcase h2 .name {
+    font-weight: lighter;
+    font-size: 2.5rem;
+  }
+  .header__showcase h2 .title {
+    font-weight: bold;
+    font-size: 6rem;
+    margin-top: 0rem;
+  }
+
+  main .about-me {
+    margin-bottom: 3rem;
+  }
+  main .about-me__heading {
+    font-size: 3rem;
+    font-weight: normal;
+  }
+  main .about-me__content {
+    margin-top: 2rem;
+  }
+  main .about-me__content a {
+    text-decoration: none;
+    font-size: 18px;
+    line-height: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #fba754;
+  }
+  main .about-me__content p {
+    font-weight: lighter;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+  main .projects {
+    background: #f9f9f9;
+    width: 100%;
+  }
+  main .projects__heading {
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+  }
+  main .projects__container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: #f9f9f9;
+  }
+
+  .about-me {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .contact-me__content {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .footer {
+    background: #121212;
+    padding: 3rem 6rem;
+  }
+  .footer__content {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .footer__content span {
+    font-weight: normal;
+    font-size: 1.1rem;
+    color: #fff;
+  }
+  .footer__content span i {
+    color: crimson;
+  }
+  .footer__content .tech {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    margin-top: 0.5rem;
+  }
+  .footer__content .tech img {
+    width: 35px;
+    margin: 0 6px;
+    height: auto;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .header__content {
+    padding: 0 16rem;
+  }
+}
+.projects {
+  height: auto;
+}
+
+main {
+  margin-top: 8rem;
+  padding: 0 1rem;
+}
+main .project-details__title span {
+  font-size: 1.5rem;
+  font-weight: lighter;
+}
+main .project-details__title h2 {
+  font-size: 2rem;
+  line-height: 2rem;
+  margin-top: 0.5rem;
+}
+main .project-details__title .links a {
+  width: 60px;
+  height: 60px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: normal;
+  font-weight: 400;
+  color: #fff;
+  display: inline-block;
+  margin-right: 5px;
+  border-radius: 50%;
+}
+main .project-details__title .links a i {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #471EC2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .project-details__title .links a i:hover {
+  background: #fba754;
+}
+main .project-details__showcase {
+  margin-top: 2rem;
+}
+main .project-details__showcase img {
+  width: 100%;
+  height: auto;
+}
+main .project-description {
+  margin-top: 5rem;
+}
+main .project-description__content .title h2 {
+  font-size: 2rem;
+  line-height: 2rem;
+  margin-bottom: 2rem;
+}
+main .project-description__content .description p {
+  font-size: 1.5rem;
+  font-weight: lighter;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+main .project-description__content .description p a {
+  color: #fba754;
+}
+main .project-description__content .description .tech .heading {
+  list-style: none;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+main .project-description__content .description .tech li {
+  list-style: none;
+  font-size: 1.5rem;
+  font-weight: lighter;
+}
+
+@media screen and (min-width: 600px) {
+  main {
+    margin-top: 8rem;
+    padding: 0 3rem;
+  }
+  main .project-details__title span {
+    font-size: 2rem;
+    font-weight: lighter;
+  }
+  main .project-details__title h2 {
+    font-size: 2.5rem;
+    line-height: 2rem;
+    margin-top: 0.5rem;
+  }
+  main .project-details__showcase {
+    margin-top: 2rem;
+  }
+  main .project-details__showcase img {
+    width: 100%;
+    height: auto;
+  }
+}
+@media screen and (min-width: 800px) {
+  main {
+    margin-top: 8rem;
+    padding: 0 3rem;
+  }
+  main .project-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  main .project-details__title span {
+    font-size: 2rem;
+    font-weight: lighter;
+  }
+  main .project-details__title h2 {
+    font-size: 2.5rem;
+    line-height: 2rem;
+    margin: 0.5rem 0;
+  }
+  main .project-details__showcase {
+    margin-top: 2rem;
+  }
+  main .project-details__showcase img {
+    width: 100%;
+    height: auto;
+  }
+  main .project-description {
+    margin-top: 10rem;
+  }
+  main .project-description__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+  }
+  main .project-description__content .title {
+    width: 20%;
+  }
+  main .project-description__content .title h2 {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  main .project-description__content .description {
+    width: 60%;
+  }
+  main .project-description__content .description p {
+    font-size: 1.5rem;
+    font-weight: lighter;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  main .project-description__content .description p a {
+    color: #fba754;
+  }
+  main .project-description__content .description .tech .heading {
+    list-style: none;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  main .project-description__content .description .tech li {
+    list-style: none;
+    font-size: 1.5rem;
+    font-weight: lighter;
+  }
+}
+@media screen and (min-width: 1300px) {
+  main {
+    margin-top: 8rem;
+    padding: 0 3rem;
+    max-width: 1400px;
+    margin: 8rem auto;
+  }
+  main .project-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  main .project-details__title span {
+    font-size: 3rem;
+    font-weight: lighter;
+  }
+  main .project-details__title h2 {
+    font-size: 4rem;
+    line-height: 2rem;
+    margin-top: 0.5rem;
+  }
+  main .project-details__showcase {
+    margin-top: 2rem;
+  }
+  main .project-details__showcase img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/*# sourceMappingURL=/js.00a46daa.css.map */
